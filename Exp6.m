@@ -1,0 +1,34 @@
+%To implement AND/OR function using perceptron neural network.
+
+clear; 
+clc;
+X = [0 0; 0 1; 1 0; 1 1];
+T_and = [0; 0; 0; 1];
+T_or  = [0; 1; 1; 1];
+net_and = perceptron;
+net_and = train(net_and, X', T_and');
+net_or = perceptron;
+net_or = train(net_or, X', T_or');
+Y_and = net_and(X');
+Y_or  = net_or(X');
+figure;
+gscatter(X(:,1),X(:,2),T_and,'rb','xo');
+hold on;
+w = net_and.IW{1}; b = net_and.b{1};
+x = -0.5:0.01:1.5;
+y = -(w(1)*x + b)/w(2);
+plot(x,y,'w','LineWidth',2);
+title('Perceptron - AND Decision Boundary');
+xlabel('x1'); 
+ylabel('x2'); 
+grid on;
+figure;
+gscatter(X(:,1),X(:,2),T_or,'rb','xo');
+hold on;
+w = net_or.IW{1}; b = net_or.b{1};
+y = -(w(1)*x + b)/w(2);
+plot(x,y,'w','LineWidth',2);
+title('Perceptron - OR Decision Boundary');
+xlabel('x1'); 
+ylabel('x2'); 
+grid on;
