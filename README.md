@@ -2,7 +2,7 @@
 
 This repository contains a set of small MATLAB programs illustrating core concepts from **soft computing**, including neural networks, Hebbian learning, ADALINE/MADALINE, Hopfield networks, fuzzy sets and logic, and genetic algorithms.
 
-Each experiment is a standalone `.m` script named `ExpN.m` (for \(N = 1 \dots 12\)). You can open and run any script independently in MATLAB.
+Each experiment is a standalone `.m` script named `ExpN.m` (for \(N = 1 to 12\)). You can open and run any script independently in MATLAB.
 
 ---
 
